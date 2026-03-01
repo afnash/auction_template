@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer themes {
+  :root {
+    --background: #0f172a;
+    /* Slate 900 */
+    --foreground: #f8fafc;
+    /* Slate 50 */
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* In your App.css or global styles */
+.football-cursor {
+  cursor: url('/football.png'), auto;
+}
+@keyframes shine {
+  0% { background-position: -100% -100%; }
+  100% { background-position: 200% 200%; }
+}
+
+.animate-shine {
+  animation: shine 3s infinite;
+}
