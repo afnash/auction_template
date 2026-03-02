@@ -77,6 +77,20 @@ export default function Home() {
             )}
           </AnimatePresence>
         </div>
+
+        <footer className="mt-auto py-4 text-center shrink-0">
+          <p className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em]">
+            Made with <span className="text-red-500">❤️</span> by{' '}
+            <a
+              href="https://afnash.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors border-b border-gray-800 hover:border-white pb-0.5"
+            >
+              afnashhh
+            </a>
+          </p>
+        </footer>
       </div>
     </main>
   );
