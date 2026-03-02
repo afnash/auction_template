@@ -12,7 +12,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
 
   return (
-    <main className="h-screen bg-slate-900 overflow-hidden selection:bg-yellow-500/30 flex flex-col">
+    <main className="min-h-screen bg-slate-900 selection:bg-yellow-500/30 flex flex-col relative">
       <SoccerBackground />
 
       <div className="fixed inset-0 pointer-events-none">
@@ -20,7 +20,7 @@ export default function Home() {
         <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-900/20 blur-[120px] rounded-full" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 py-4 flex flex-col flex-1 overflow-hidden">
+      <div className="relative z-10 container mx-auto px-4 py-4 flex flex-col min-h-screen">
         <header className="flex flex-col items-center justify-center mb-6 pt-2 shrink-0">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -39,7 +39,7 @@ export default function Home() {
           </motion.p>
         </header>
 
-        <div className="flex-1 overflow-hidden relative">
+        <div className="relative">
           <AnimatePresence mode='wait'>
             {selectedCategory ? (
               <motion.div
@@ -48,7 +48,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ duration: 0.3 }}
-                className="absolute inset-0"
+                className="w-full"
               >
                 <AuctionView
                   category={selectedCategory}
@@ -62,7 +62,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className="max-w-6xl mx-auto h-full flex flex-col overflow-hidden"
+                className="max-w-6xl mx-auto w-full flex flex-col"
               >
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 shrink-0">
                   <CategoryCard category="Iconic" label="Legendary Players" onClick={(c) => setSelectedCategory(c)} />

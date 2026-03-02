@@ -124,7 +124,7 @@ export function AuctionView({ category, onBack }: AuctionViewProps) {
 
     if (viewMode === 'list') {
         return (
-            <div className="flex flex-col items-center justify-start h-full py-4 px-4 relative">
+            <div className="flex flex-col items-center justify-start py-4 px-4 relative">
                 <div className="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center mb-8 relative z-10 gap-4">
                     <button
                         onClick={onBack}
@@ -166,8 +166,8 @@ export function AuctionView({ category, onBack }: AuctionViewProps) {
                     ) : <div className="w-40 md:block hidden" />}
                 </div>
 
-                <div className="w-full max-w-7xl relative z-10 flex flex-col flex-1 overflow-hidden">
-                    <div className="flex-1 overflow-y-auto custom-scrollbar pr-2 mb-2">
+                <div className="w-full max-w-7xl relative z-10 flex flex-col">
+                    <div className="mb-2">
                         {filteredPlayers.length === 0 ? (
                             <div className="flex flex-col items-center justify-center h-full text-gray-500 italic">
                                 <Filter className="w-12 h-12 mb-4 opacity-20" />
@@ -240,7 +240,7 @@ export function AuctionView({ category, onBack }: AuctionViewProps) {
     }
 
     return (
-        <div className="flex flex-col items-center justify-start h-full py-4 px-4 relative">
+        <div className="flex flex-col items-center justify-start py-4 px-4 relative">
             <div className="w-full max-w-6xl flex justify-between items-center mb-4 relative z-10 shrink-0">
                 <button
                     onClick={() => setViewMode('list')}
@@ -287,7 +287,7 @@ export function AuctionView({ category, onBack }: AuctionViewProps) {
                         </div>
                     </motion.div>
                 ) : (
-                    <div className="flex flex-col items-center w-full h-full relative z-10 overflow-y-auto custom-scrollbar pb-20">
+                    <div className="flex flex-col items-center w-full relative z-10 pb-20">
                         <div className="relative shrink-0 scale-90 origin-top">
                             <PlayerCard
                                 key={filteredPlayers[currentIndex].id}

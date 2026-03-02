@@ -74,13 +74,13 @@ export function TeamDashboard() {
     );
 
     return (
-        <div className="w-full h-full flex flex-col p-1">
+        <div className="w-full flex flex-col p-1">
             <div className="flex items-center gap-4 mb-4 shrink-0 bg-slate-900/90 p-2 z-10 backdrop-blur-md rounded-lg border border-white/5">
                 <Users className="w-5 h-5 text-yellow-500" />
                 <h2 className="text-lg font-bold text-white tracking-widest uppercase">Live Squads</h2>
             </div>
 
-            <div className="flex-1 overflow-y-auto custom-scrollbar">
+            <div className="">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-4">
                     {teamsData.map((team, index) => (
                         <motion.div
